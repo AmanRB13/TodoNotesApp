@@ -26,6 +26,7 @@ class _BottomnavigationState extends State<Bottomnavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
         title: Text('To do List  app'),
         actions: [
           TextButton(onPressed: () {}, child: Icon(Icons.home, size: 20)),
@@ -130,3 +131,4 @@ class _BottomnavigationState extends State<Bottomnavigation> {
     );
   }
 }
+
