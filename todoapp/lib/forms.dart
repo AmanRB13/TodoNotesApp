@@ -21,7 +21,9 @@ class _AuthenticationState extends State<Authentication> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Email/Password Auth')),
+      appBar: AppBar(
+         backgroundColor: Colors.blueGrey,
+        title: const Text('Email/Password Auth')),
       body: Form(
         key: _formkey,
         child: Padding(
