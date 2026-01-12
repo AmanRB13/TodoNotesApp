@@ -18,7 +18,9 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Dashboard')),
+      appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
+        title: const Text('Dashboard')),
       body: Consumer<Listprovider>(
         builder: (context, model, child) {
           if (model.alllist.isEmpty) {
