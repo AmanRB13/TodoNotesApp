@@ -28,6 +28,32 @@ class Listprovider extends ChangeNotifier {
   List<String> notestitle = [];
   List<String> notesbody = [];
 
+  // 0 for all, 1 for completed and 2 for pending
+  int filter = 0;
+  void setfilter(int value) {
+    filter = value;
+    notifyListeners();
+  }
+
+  List<int> get filteredIndexes {
+    if (alllist.isEmpty) {
+      return [];
+    }
+    final todo = alllist.first;
+    List<int> list = [];
+    for (int i = 0; i < todo.title.length; i++) {
+      if (filter == 0) {
+        list.add(i);
+      } else if (filter == 1 && todo.isdone[i]) {
+        list.add(i);
+      } else if (filter == 2 && !todo.isdone[i]) {
+        list.add(i);
+      }
+    }
+    return list;
+  }
+  // filteredIndexes becomes [0,2,4]
+
   void addlist() {
     worktitle.add('');
     notifyListeners();
